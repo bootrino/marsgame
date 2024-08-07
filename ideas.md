@@ -19,4 +19,7 @@ cameras
 
 mars life found and thriving in the food production facilities
 
+mars rovers
+balloons
+helicopters
 
