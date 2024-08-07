@@ -6,6 +6,7 @@ a mind forever voyaging style play
 
 seeing things you need to do and needing to send a robot to do it
 example looking out of a window and seeing a problem in the distance
+looking through windows into inaccessible areas such as a reactor glowing with green light
 
 
 don't just "wake up from cryosleep" make the first problem or situation happen in cryosleep
