@@ -183,30 +183,30 @@ const world = new World();
 
 // Define rooms
 const rooms = [
-    { name: 'Cryo Room', description: 'A cold room with cryo chambers lining the walls.' },
-    { name: 'Engine Room', description: 'The heart of the ship, filled with complex machinery.' },
+    { name: 'Observation Deck', description: 'A deck with a panoramic view of space.' },
     { name: 'Bridge', description: 'The command center of the ship with a large view screen.' },
     { name: 'Crew Quarters', description: 'A place where the crew rests and sleeps.' },
     { name: 'Med Bay', description: 'A medical facility with various instruments and a sick bay.' },
+    { name: 'Engine Room', description: 'The heart of the ship, filled with complex machinery.' },
+    { name: 'Cryo Room', description: 'A cold room with cryo chambers lining the walls.' },
     { name: 'Cargo Hold', description: 'A large area filled with crates and supplies.' },
     { name: 'Laboratory', description: 'A lab filled with scientific equipment and experiments.' },
     { name: 'Armory', description: 'A room stocked with weapons and armor.' },
-    { name: 'Mess Hall', description: 'The dining area for the crew with tables and food dispensers.' },
-    { name: 'Observation Deck', description: 'A deck with a panoramic view of space.' }
+    { name: 'Mess Hall', description: 'The dining area for the crew with tables and food dispensers.' }
 ];
 
 // Room adjacency map with compass directions and vertical movement
 const roomAdjacency = {
-    'Cryo Room': { N: 'Engine Room', S: null, E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Engine Room': { N: 'Bridge', S: 'Cryo Room', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Bridge': { N: 'Crew Quarters', S: 'Engine Room', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Crew Quarters': { N: 'Med Bay', S: 'Bridge', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Med Bay': { N: 'Cargo Hold', S: 'Crew Quarters', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Cargo Hold': { N: 'Laboratory', S: 'Med Bay', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Laboratory': { N: 'Armory', S: 'Cargo Hold', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Armory': { N: 'Mess Hall', S: 'Laboratory', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Mess Hall': { N: 'Observation Deck', S: 'Armory', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null },
-    'Observation Deck': { N: null, S: 'Mess Hall', E: null, W: null, NE: null, NW: null, SE: null, SW: null, U: null, D: null }
+    'Observation Deck': { S: 'Bridge' },
+    'Bridge': { N: 'Observation Deck', S: 'Engine Room', W: 'Crew Quarters' },
+    'Crew Quarters': { E: 'Bridge', S: 'Med Bay' },
+    'Med Bay': { N: 'Crew Quarters', W: 'Armory' },
+    'Engine Room': { N: 'Bridge', S: 'Cryo Room' },
+    'Cryo Room': { N: 'Engine Room', S: 'Cargo Hold' },
+    'Cargo Hold': { N: 'Cryo Room', S: 'Laboratory' },
+    'Laboratory': { N: 'Cargo Hold', S: 'Mess Hall' },
+    'Armory': { E: 'Med Bay' },
+    'Mess Hall': { N: 'Laboratory' }
 };
 
 // Create room entities
