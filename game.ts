@@ -3,6 +3,7 @@ import { World, System, Entity } from 'perform-ecs';
 // Define components
 class Position {
     room: string;
+    previousRoom?: string;
     constructor(room: string) {
         this.room = room;
     }
@@ -56,12 +57,18 @@ class Inventory {
 
 class Container {
     isOpen: boolean;
-    isLocked: boolean;
     items: Set<string>;
-    constructor() {
-        this.isOpen = false;
-        this.isLocked = false;
+
+    constructor(isOpen: boolean = false) {
+        this.isOpen = isOpen;
         this.items = new Set();
+    }
+}
+
+class GameState {
+    earthquakeOccurred: boolean;
+    constructor() {
+        this.earthquakeOccurred = false;
     }
 }
 
@@ -71,9 +78,19 @@ class MovementSystem extends System {
         this.entities.forEach(entity => {
             const movable = entity.getComponent(Movable);
             const position = entity.getComponent(Position);
+            const npc = entity.getComponent(NPC);
+
             if (movable && movable.destination) {
+                const previousRoom = position.room;
+                position.previousRoom = previousRoom;
                 position.room = movable.destination;
                 movable.destination = undefined;
+
+                // Output messages
+                if (npc) {
+                    console.log(`${npc.name} leaves the ${previousRoom}.`);
+                    console.log(`${npc.name} enters the ${position.room}.`);
+                }
             }
         });
     }
@@ -110,6 +127,10 @@ class EventSystem extends System {
                 description.description = 'The room is now rubble and wreckage.';
             }
         });
+
+        // Update global game state
+        const gameState = world.getEntity(gameStateEntity).getComponent(GameState);
+        gameState.earthquakeOccurred = true;
     }
 }
 
@@ -159,7 +180,6 @@ class FloydMovementSystem extends System {
                     const directions = Object.keys(adjacentRooms).filter(dir => adjacentRooms[dir] !== null);
                     const newRoom = adjacentRooms[directions[Math.floor(Math.random() * directions.length)]];
                     entity.getComponent(Movable).destination = newRoom;
-                    console.log(`Floyd moves to the ${newRoom}.`);
                 }
             }
         });
@@ -175,6 +195,48 @@ class InventorySystem extends System {
                 inventory.items.forEach(item => console.log(item));
             }
         });
+    }
+}
+
+class ContainerSystem extends System {
+    update(): void {
+        this.entities.forEach(entity => {
+            const container = entity.getComponent(Container);
+            const position = entity.getComponent(Position);
+            const description = entity.getComponent(Description);
+            if (container && position && description) {
+                if (container.isOpen) {
+                    console.log(`You open the ${description.description}. Inside you see:`);
+                    container.items.forEach(item => {
+                        console.log(` - ${item}`);
+                    });
+                } else {
+                    console.log(`The ${description.description} is closed.`);
+                }
+            }
+        });
+    }
+
+    openContainer(entity: Entity): void {
+        const container = entity.getComponent(Container);
+        if (container) {
+            container.isOpen = true;
+            this.update();
+        } else {
+            console.log("This entity is not a container.");
+        }
+    }
+}
+
+class SomeOtherSystem extends System {
+    update(): void {
+        const gameState = world.getEntity(gameStateEntity).getComponent(GameState);
+        if (gameState.earthquakeOccurred) {
+            // Perform actions based on the earthquake occurrence
+            console.log("The earthquake has occurred. Adjusting behavior.");
+        }
+
+        // Other update logic
     }
 }
 
@@ -216,6 +278,11 @@ rooms.forEach(room => {
     roomEntity.addComponent(new Description(room.description));
 });
 
+// Create global game state entity
+const gameStateEntity = world.createEntity();
+const gameState = new GameState();
+gameStateEntity.addComponent(gameState);
+
 // Create player entity
 const player = world.createEntity();
 player.addComponent(new Position('Cryo Room'));
@@ -223,12 +290,17 @@ player.addComponent(new Description('A cold room with cryo chambers lining the w
 player.addComponent(new VisitedRooms());
 player.addComponent(new Inventory());
 
-// Create NPC entity
-const npc = world.createEntity();
-npc.addComponent(new Position('Cryo Room'));
-npc.addComponent(new Description('An NPC named Floyd, who seems friendly.'));
-npc.addComponent(new NPC('Floyd'));
-npc.addComponent(new Movable());
+// Create NPC entity with container
+const floyd = world.createEntity();
+floyd.addComponent(new Position('Cryo Room'));
+floyd.addComponent(new Description('An NPC named Floyd, who seems friendly.'));
+floyd.addComponent(new NPC('Floyd'));
+floyd.addComponent(new Movable());
+floyd.addComponent(new Container());
+
+// Add an item (screwdriver) to Floyd's container
+const floydContainer = floyd.getComponent(Container);
+floydContainer.items.add('screwdriver');
 
 // Create object entities
 const objects = [
@@ -253,6 +325,8 @@ world.addSystem(new EventSystem());
 world.addSystem(new InteractionSystem());
 world.addSystem(new FloydMovementSystem(roomAdjacency));
 world.addSystem(new InventorySystem());
+world.addSystem(new ContainerSystem());
+world.addSystem(new SomeOtherSystem());
 
 const moveNPC = (npc: Entity, destination: string) => {
     const movable = npc.getComponent(Movable);
@@ -281,6 +355,7 @@ const movePlayer = (player: Entity, directionOrRoom: string) => {
     }
 
     if (newRoom) {
+        position.previousRoom = position.room;
         position.room = newRoom;
         visitedRooms.rooms.add(newRoom);
         console.log(`You move to the ${newRoom}.`);
@@ -328,6 +403,18 @@ const examineObject = (objectName: string) => {
     });
 };
 
+const openContainer = (containerName: string) => {
+    world.entities.forEach(entity => {
+        const obj = entity.getComponent(ObjectComponent);
+        const container = entity.getComponent(Container);
+        const description = entity.getComponent(Description);
+        if (obj && container && description && obj.name === containerName) {
+            const containerSystem = world.getSystem(ContainerSystem);
+            containerSystem.openContainer(entity);
+        }
+    });
+};
+
 // Command dictionary
 const commands = {
     look: () => world.update(1),
@@ -336,9 +423,10 @@ const commands = {
     drop: (objectName: string) => dropObject(player, objectName),
     inventory: () => world.update(1),
     examine: (objectName: string) => examineObject(objectName),
+    open: (containerName: string) => openContainer(containerName),
     talk: (npcName: string) => {
         if (npcName === 'Floyd') {
-            interactWithNPC(npc);
+            interactWithNPC(floyd);
         } else {
             console.log('There is no one by that name here.');
         }
