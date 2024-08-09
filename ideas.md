@@ -45,6 +45,28 @@ valle marinaris
 "Do stars sing songs?
 Do robot wishes come true?
 "Can I ride on your shoulders? 
+Floyd peers at what you are doing "can I help please?"
+"Why is the sky blue?"
+"Can we have ice cream for breakfast?"
+"I’m not sleepy!"
+"Look what I can do!"
+"Why do I have to take a bath?"
+"Can I have a pet dinosaur?"
+"Why does it rain?"
+"I want to be a superhero when I grow up!"
+"Can we play outside?"
+"Why do I have to go to bed when the sun is still up?"
+"I’m hungry again!"
+"Why can’t I fly like a bird?"
+"Can you tell me a story?"
+"I don’t want to wear this!"
+"Why do cats purr?"
+"How do cars work?"
+"I want to do it myself!"
+"Where does the moon go during the day?"
+"Why do people have to work?"
+"Can we go to the zoo and see the animals?"
+
 
 
 
