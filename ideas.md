@@ -69,6 +69,8 @@ Floyd peers at what you are doing "can I help please?"
 
 
 
+Floyd yawns.
+Floyd goes to recharge.
 
 
 
