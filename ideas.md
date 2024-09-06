@@ -264,3 +264,121 @@ The message ends abruptly, the last few words drowned out by static. The device 
 Finally, you return to the main control terminal at the back of the room. The blinking cursor on the screen seems to beckon you, inviting you to access whatever data might still be stored here. This terminal likely controls the base’s remaining systems and could hold logs, camera footage, or other critical information.
 
 What do you do?
+
+
+
+
+
+
+
+I'm glad you liked the idea of **Environmental Puzzles**! These puzzles are a great way to create immersive, interactive challenges for players that feel like classic text adventures. Here's how you can expand on that concept and create a variety of **Environmental Puzzles** for your sci-fi TTRPG campaign.
+
+### 1. **Laser Reflection Puzzle (Mirror and Laser)**
+   **Concept**: Players must manipulate a series of mirrors or reflective surfaces to direct a laser beam to a specific point, such as a control panel or sensor, in order to activate or disable a system.
+
+   #### Puzzle Setup:
+   - **Room Description**: The players enter a room with a deactivated door and a laser emitter on one wall. The room is filled with a series of adjustable mirrors or reflective panels, though some are locked in place.
+   - **Goal**: They need to use the mirrors to reflect the laser beam onto a sensor that powers up the door or activates a device.
+
+   #### Puzzle Mechanics:
+   - **Investigate**: Players must first figure out that the mirrors can be rotated or adjusted (through perception checks or basic investigation).
+   - **Interact**: They must position the mirrors in the correct sequence to direct the beam toward the sensor.
+   - **Obstacle**: Maybe some mirrors are broken, requiring players to find materials to repair them (e.g., a piece of metal or glass elsewhere in the environment). Alternatively, one of the mirrors could be out of reach, requiring clever use of tools or teamwork.
+
+   #### Possible Variations:
+   - The laser changes color based on the angle of reflection, and only the right color can activate the sensor.
+   - The room has moving walls or platforms, forcing players to quickly adjust mirrors before the puzzle resets.
+
+---
+
+### 2. **Gravity Control Puzzle**
+   **Concept**: Players find themselves in a room where they must manipulate the gravity or magnetic fields to move objects or gain access to new areas.
+
+   #### Puzzle Setup:
+   - **Room Description**: The room has a control panel that alters the gravity, allowing players to toggle between low, normal, or high gravity. Certain objects in the room (e.g., a heavy crate or floating platform) can only be moved when gravity is adjusted.
+   - **Goal**: Players need to use gravity changes to access a higher level or move heavy objects to activate switches or open doors.
+
+   #### Puzzle Mechanics:
+   - **Manipulate Gravity**: Players must figure out how to use the gravity control panel to move an object into the right position. For example, they might need low gravity to push a heavy object but high gravity to prevent it from drifting away.
+   - **Timing**: The puzzle could have a time-based element, requiring players to move between gravity settings quickly or activate certain mechanisms before the environment resets.
+
+   #### Possible Variations:
+   - Objects in the room may behave differently under low or high gravity. Some may float, while others could become immovable, requiring players to think creatively.
+   - Dangerous areas of the room are only accessible with a specific gravity setting, adding risk to experimentation.
+
+---
+
+### 3. **Power Conduit Puzzle**
+   **Concept**: Players must reroute power through a series of conduits to activate a door, elevator, or piece of equipment. Each conduit might require manipulation or repair before it works properly.
+
+   #### Puzzle Setup:
+   - **Room Description**: A large room contains a complex network of power conduits, control panels, and switches. Several conduits are damaged or inactive, and the players need to reroute power from a generator to a particular door or device.
+   - **Goal**: The players must figure out how to activate the correct combination of conduits to power the desired system.
+
+   #### Puzzle Mechanics:
+   - **Investigate**: Players can use investigation skills to examine the conduits, identifying which ones are functional and which are damaged.
+   - **Interact**: They must repair or bypass broken conduits using items they’ve found earlier (e.g., replacement wires or circuit boards). Alternatively, they might have to solve a riddle or sequence-based puzzle to reroute the power through a series of switches.
+   - **Obstacle**: Some conduits may lead to traps or shut down other systems in the room, requiring careful planning.
+
+   #### Possible Variations:
+   - Some conduits power environmental hazards (e.g., electric barriers or sentry turrets), and the players need to disable these before proceeding.
+   - Players must balance power across multiple systems, preventing them from powering everything at once.
+
+---
+
+### 4. **Sound Frequency Puzzle**
+   **Concept**: Players must generate specific sound frequencies or tones using alien technology or equipment in order to unlock doors or disable security systems.
+
+   #### Puzzle Setup:
+   - **Room Description**: The players enter a chamber with an alien sound device that reacts to specific frequencies. On one side of the room is a locked door with no visible key or control panel, but the sound device has a series of dials or settings.
+   - **Goal**: They need to produce the correct frequency (or a sequence of frequencies) to open the door or trigger some other mechanism.
+
+   #### Puzzle Mechanics:
+   - **Experiment**: The players can turn the dials or adjust the settings on the device to produce different tones. Clues to the correct frequency might be scattered throughout the environment (e.g., a log entry or visual pattern indicating soundwaves).
+   - **Solve**: Once they produce the correct frequency, the door unlocks, or an alien system activates.
+
+   #### Possible Variations:
+   - The room might have multiple devices, each producing different tones, and the players must create harmonic resonance by activating them in the right order.
+   - The sound puzzle might require precise timing, where players must match the tones to a rhythmic pattern displayed on a console.
+
+---
+
+### 5. **Atmosphere Manipulation Puzzle**
+   **Concept**: Players need to alter the atmosphere or environmental conditions in a room to access a hidden area or deactivate a security system.
+
+   #### Puzzle Setup:
+   - **Room Description**: The players enter a sealed room with atmospheric controls that allow them to adjust temperature, pressure, or gas levels. In the center of the room is a locked compartment that seems linked to the environmental system.
+   - **Goal**: They must manipulate the environmental settings to match a certain combination in order to unlock the compartment or proceed.
+
+   #### Puzzle Mechanics:
+   - **Clues**: Players may find environmental readings in nearby logs or monitors that give hints about the correct settings. For example, the compartment may only open at a specific temperature and pressure combination.
+   - **Interact**: They can adjust sliders or input values into the control panel to change the room’s environment. Incorrect combinations may trigger alarms or environmental hazards, adding risk.
+   - **Obstacle**: Players may need to search for missing components (e.g., a coolant module or oxygen filter) to fully control the atmosphere.
+
+   #### Possible Variations:
+   - Some areas of the room may be inaccessible until the correct atmospheric conditions are met (e.g., freezing temperatures create an ice bridge, or low oxygen disables security drones).
+   - Players could encounter environmental hazards (toxic gas, extreme heat) that they need to mitigate while solving the puzzle.
+
+---
+
+### 6. **Magnetic Field Puzzle**
+   **Concept**: Players must manipulate magnetic fields to move metallic objects or open magnetic locks. The objects may be scattered across the room and interact in unexpected ways when the fields are activated.
+
+   #### Puzzle Setup:
+   - **Room Description**: A room filled with various metallic objects, some suspended in mid-air by magnetic fields. A control panel with magnetic field settings allows players to turn the fields on or off, and there are magnetic locks on a door.
+   - **Goal**: Players need to adjust the magnetic fields to move objects into place (e.g., over pressure plates or into slots) or to unlock a magnetic seal.
+
+   #### Puzzle Mechanics:
+   - **Investigate**: Players investigate the objects and fields to determine which items are affected by the magnets and how they can be manipulated.
+   - **Interact**: They must activate or deactivate magnetic fields in a specific sequence to move the objects or trigger the correct lock mechanisms.
+   - **Obstacle**: Certain objects may have unpredictable reactions to the magnetic fields, forcing players to think creatively. For example, one item might repel another when moved.
+
+   #### Possible Variations:
+   - Some magnetic fields may cause objects to block exits or reveal new passages.
+   - Different materials might react to the fields in unique ways, such as ferromagnetic vs. non-magnetic objects.
+
+---
+
+These **Environmental Puzzles** can add depth to your sci-fi TTRPG and create engaging, thought-provoking challenges for players. They fit perfectly with the interactive, room-by-room feel of a text adventure while allowing for creative problem-solving and exploration. Would you like a more detailed example of any of these puzzles in a specific scenario?
+
+
