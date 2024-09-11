@@ -1,0 +1,225 @@
+cave_of_time = {
+    'cave_entrance': {
+        'text': "You find yourself standing at the mouth of the Cave of Time. Do you dare to enter or turn back?",
+        'choices': {
+            'Enter the cave': 'inside_cave',
+            'Turn back': 'leave_cave'
+        }
+    },
+    'leave_cave': {
+        'text': "You turn back, deciding it’s not the right day for adventure. The end.",
+        'choices': {}
+    },
+    'inside_cave': {
+        'text': "The cave is dark, but a flickering light is visible in the distance. Do you head toward the light or explore the shadows?",
+        'choices': {
+            'Head toward the light': 'underground_river',
+            'Explore the shadows': 'ancient_inscription'
+        }
+    },
+    'ancient_inscription': {
+        'text': "You venture deeper into the shadows and stumble upon an ancient inscription. What do you do?",
+        'choices': {
+            'Read the inscription': 'warning_inscription',
+            'Ignore it and keep walking': 'ground_shakes'
+        }
+    },
+    'underground_river': {
+        'text': "The light leads you to an underground river. Do you cross the river or follow its path?",
+        'choices': {
+            'Cross the river': 'find_artifact',
+            'Follow the river': 'hidden_door'
+        }
+    },
+    'hidden_door': {
+        'text': "You follow the river for miles and discover a hidden door carved into the cave wall. Do you open the door?",
+        'choices': {
+            'Open the door': 'brightly_lit_chamber',
+            'Keep walking': 'cliff_edge'
+        }
+    },
+    'warning_inscription': {
+        'text': "The inscription reveals a warning of great danger ahead. Do you proceed with caution or return to the cave entrance?",
+        'choices': {
+            'Proceed with caution': 'ancient_temple',
+            'Return to the entrance': 'cave_entrance'
+        }
+    },
+    'ground_shakes': {
+        'text': "You ignore the inscription and continue through the cave. Suddenly, you feel the ground shake. What will you do?",
+        'choices': {
+            'Run back': 'cave_collapse',
+            'Hide': 'rolling_boulder'
+        }
+    },
+    'cliff_edge': {
+        'text': "You keep walking, but the path ends abruptly at a cliff. Do you climb down or turn back?",
+        'choices': {
+            'Climb down': 'tunnel_network',
+            'Turn back': 'hidden_door'
+        }
+    },
+    'find_artifact': {
+        'text': "You cross the river and find a strange artifact embedded in the cave wall. What will you do?",
+        'choices': {
+            'Take the artifact': 'artifact_taken',
+            'Leave it and move on': 'path_splits'
+        }
+    },
+    'cave_collapse': {
+        'text': "You attempt to run back, but the cave collapses behind you. You're trapped. The end.",
+        'choices': {}
+    },
+    'ancient_temple': {
+        'text': "Proceeding cautiously, you stumble upon an ancient temple. Do you enter or turn back?",
+        'choices': {
+            'Enter the temple': 'temple_traps',
+            'Turn back': 'warning_inscription'
+        }
+    },
+    'rolling_boulder': {
+        'text': "You hide, but the shaking continues. A massive boulder rolls past you. After it passes, you can continue. What next?",
+        'choices': {
+            'Keep going forward': 'light_at_end',
+            'Turn back': 'ground_shakes'
+        }
+    },
+    'path_splits': {
+        'text': "You leave the artifact untouched and press on. The path splits again. Do you go left or right?",
+        'choices': {
+            'Go left': 'strange_garden',
+            'Go right': 'bright_light'
+        }
+    },
+    'cliff_noise': {
+        'text': "You decide to turn back. Suddenly, you hear strange noises behind you. Do you investigate or run?",
+        'choices': {
+            'Investigate': 'ancient_creature',
+            'Run': 'run_back'
+        }
+    },
+    'ancient_creature': {
+        'text': "Investigating the noise, you find an ancient creature guarding a treasure. Do you approach it?",
+        'choices': {
+            'Approach the creature': 'creature_attacks',
+            'Leave it alone': 'cave_exit'
+        }
+    },
+    'temple_traps': {
+        'text': "The temple is filled with treasures and traps. Do you explore further or leave?",
+        'choices': {
+            'Explore further': 'hidden_passage',
+            'Leave the temple': 'temple_exit'
+        }
+    },
+    'brightly_lit_chamber': {
+        'text': "You open the door and step into a brightly lit chamber. What do you do next?",
+        'choices': {
+            'Look around': 'find_map',
+            'Close the door and leave': 'cliff_noise'
+        }
+    },
+    'hidden_passage': {
+        'text': "You explore further and find a hidden passage. Do you enter?",
+        'choices': {
+            'Enter the passage': 'underground_city',
+            'Turn back': 'temple_traps'
+        }
+    },
+    'tunnel_network': {
+        'text': "Climbing down the cliff, you find a network of tunnels. Do you explore or return to the cliff?",
+        'choices': {
+            'Explore the tunnels': 'deep_tunnels',
+            'Return to the cliff': 'cliff_noise'
+        }
+    },
+    'light_at_end': {
+        'text': "Moving forward, you see a light at the end of the tunnel. Do you head towards it?",
+        'choices': {
+            'Head towards the light': 'bright_light',
+            'Turn back': 'rolling_boulder'
+        }
+    },
+    'underground_city': {
+        'text': "The passage leads you to an underground city. Do you explore the city or turn back?",
+        'choices': {
+            'Explore the city': 'explore_city',
+            'Turn back': 'hidden_passage'
+        }
+    },
+    'strange_garden': {
+        'text': "You take the left path and find yourself in a strange garden. Do you explore or leave?",
+        'choices': {
+            'Explore': 'explore_garden',
+            'Leave': 'hidden_path'
+        }
+    },
+    'creature_attacks': {
+        'text': "You approach the creature, but it attacks. You fight bravely, but the creature is too strong. The end.",
+        'choices': {}
+    },
+    'temple_exit': {
+        'text': "You leave the temple and find yourself back at the cave entrance. The end.",
+        'choices': {}
+    },
+    'find_map': {
+        'text': "Looking around, you find a map on the wall. Do you take the map or leave it?",
+        'choices': {
+            'Take the map': 'follow_map',
+            'Leave it': 'path_splits'
+        }
+    },
+    'explore_city': {
+        'text': "The city is vast and empty. Do you search for inhabitants or leave?",
+        'choices': {
+            'Search for inhabitants': 'no_inhabitants',
+            'Leave': 'hidden_passage'
+        }
+    },
+    'follow_map': {
+        'text': "The map reveals a secret exit from the cave. Do you follow it?",
+        'choices': {
+            'Follow the map': 'cave_exit',
+            'Stay': 'explore_city'
+        }
+    },
+    'explore_garden': {
+        'text': "Exploring the garden, you find strange plants and hidden paths. Do you continue exploring?",
+        'choices': {
+            'Continue exploring': 'hidden_path',
+            'Turn back': 'strange_garden'
+        }
+    },
+    'hidden_path': {
+        'text': "You discover a hidden path leading deeper into the cave. Do you follow it?",
+        'choices': {
+            'Follow the hidden path': 'secret_treasure',
+            'Turn back': 'explore_garden'
+        }
+    },
+    'cave_exit': {
+        'text': "Following the hidden path, you escape the cave safely. You are free! The end.",
+        'choices': {}
+    }
+}
+def traverse_story(story, current_step='cave_entrance'):
+    while True:
+        step = story.get(current_step)
+        if not step:
+            print("Invalid choice. Story ends.")
+            break
+        print(step['text'])
+        if not step['choices']:
+            print("The End.")
+            break
+        print("\nChoices:")
+        for choice, next_step in step['choices'].items():
+            print(f"- {choice} (go to {next_step})")
+        next_choice = input("What do you choose? ")
+        if next_choice in step['choices']:
+            current_step = step['choices'][next_choice]
+        else:
+            print("Invalid choice. Try again.")
+
+# Start navigating the adventure
+traverse_story(cave_of_time)
